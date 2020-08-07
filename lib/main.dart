@@ -27,31 +27,60 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        margin: EdgeInsets.all(30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             _titleBuilder(text: 'Hello'),
-            Row(children: <Widget>[
-              _titleBuilder(text: 'There'),
-              _titleBuilder(text: '.', color: Colors.green),
-            ],),
+            Row(
+              children: <Widget>[
+                _titleBuilder(text: 'There'),
+                _titleBuilder(text: '.', color: Colors.green),
+              ],
+            ),
+            _inputBuilder(controller: email, label: 'EMAIL'),
+            _inputBuilder(
+              controller: password,
+              label: 'PASSWORD',
+              obscureText: true,
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _titleBuilder({String text,Color color}) {
+  Widget _titleBuilder({String text, Color color = Colors.black}) {
     return Text(
       text,
       style: TextStyle(
         fontSize: 60,
         fontWeight: FontWeight.bold,
-        color: color ?? Colors.black
+        color: color,
+      ),
+    );
+  }
+
+  Widget _inputBuilder(
+      {@required TextEditingController controller,
+      @required String label,
+      bool obscureText = false}) {
+    return TextField(
+      controller: controller,
+      obscureText: obscureText,
+      decoration: InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(color: Colors.grey),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.green),
+        ),
       ),
     );
   }
