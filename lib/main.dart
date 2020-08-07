@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'Montserrat',
       ),
       home: MyHomePage(),
     );
@@ -26,16 +27,27 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            _titleBuilder('Hello'),
+            _titleBuilder('There.'),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _titleBuilder(String text) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: 60,
+        fontWeight: FontWeight.bold,
       ),
     );
   }
