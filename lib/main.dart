@@ -34,20 +34,24 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            _titleBuilder('Hello'),
-            _titleBuilder('There.'),
+            _titleBuilder(text: 'Hello'),
+            Row(children: <Widget>[
+              _titleBuilder(text: 'There'),
+              _titleBuilder(text: '.', color: Colors.green),
+            ],),
           ],
         ),
       ),
     );
   }
 
-  Widget _titleBuilder(String text) {
+  Widget _titleBuilder({String text,Color color}) {
     return Text(
       text,
       style: TextStyle(
         fontSize: 60,
         fontWeight: FontWeight.bold,
+        color: color ?? Colors.black
       ),
     );
   }
