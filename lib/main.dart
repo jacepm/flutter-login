@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -64,6 +65,47 @@ class _MyHomePageState extends State<MyHomePage> {
                   textAlign: TextAlign.right,
                 ),
                 onTap: () {},
+              ),
+              SizedBox(height: 20.0),
+              RaisedButton(
+                padding: EdgeInsets.symmetric(vertical: 12.0),
+                child: Text(
+                  'LOGIN',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0,
+                  ),
+                ),
+                color: Colors.green,
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+              ),
+              SizedBox(height: 20.0),
+              FlatButton(
+                padding: EdgeInsets.symmetric(vertical: 12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    FaIcon(FontAwesomeIcons.facebookF),
+                    SizedBox(width: 10.0),
+                    Text(
+                      'Log in with Facebook',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ],
+                ),
+                color: Colors.white,
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                  side: BorderSide(color: Colors.black, width: 2.0),
+                ),
               ),
             ],
           ),
