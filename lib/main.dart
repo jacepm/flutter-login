@@ -61,8 +61,14 @@ class _MyHomePageState extends State<MyHomePage> {
       SizedBox(height: 20.0),
       _gestureBuilder(text: 'Forgot Password', textAlign: TextAlign.right),
       SizedBox(height: 20.0),
-      RaisedButton(
-        padding: EdgeInsets.symmetric(vertical: 12.0),
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(vertical: 12.0),
+          primary: Colors.green,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+        ),
         child: Text(
           'LOGIN',
           style: TextStyle(
@@ -71,15 +77,17 @@ class _MyHomePageState extends State<MyHomePage> {
             fontSize: 18.0,
           ),
         ),
-        color: Colors.green,
         onPressed: () {},
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
-        ),
       ),
       SizedBox(height: 20.0),
-      RaisedButton(
-        padding: EdgeInsets.symmetric(vertical: 12.0),
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(vertical: 12.0),
+          primary: Colors.blue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -94,12 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        color: Colors.white,
         onPressed: () {},
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
-          side: BorderSide(color: Colors.black, width: 2.0),
-        ),
       ),
       SizedBox(height: 20.0),
       _gestureBuilder(text: 'Register'),
